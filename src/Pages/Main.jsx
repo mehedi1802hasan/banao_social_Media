@@ -8,10 +8,11 @@ const Main = () => {
     return (
         <div>
             {/* <Nav></Nav>
-             <LoginModal></LoginModal> */}
+             <LoginModal></LoginModal>
 
-<Banner></Banner> 
-{/* <Post></Post>        */}
+*/}
+<Banner></Banner>  
+<Post></Post>       
         </div>
     );
 };

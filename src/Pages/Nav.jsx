@@ -14,7 +14,7 @@ const Nav = () => {
         <div>
         <Image src={logo} alt="" />
         </div>
-        <div style={{ position: 'relative', width: '400px' }}>
+        <div className='d-none d-md-flex' style={{ position: 'relative', width: '400px' }}>
   <p className='text-center mt-3' style={{ position: 'absolute',  left: '10%', transform: 'translate(-50%, -50%)', zIndex: 1 }}>
   <IoIosSearch />
 
@@ -28,7 +28,7 @@ const Nav = () => {
 </div>
 
 
-        <div className='d-flex align-items-center'>
+        <div className='d-flex align-items-center mt-3'>
         <h6 >
               Create Account{' '}
               <span>

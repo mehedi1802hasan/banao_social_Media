@@ -1,11 +1,15 @@
 import React from 'react';
 import { Button, Card, Container } from 'react-bootstrap';
-import post1 from "../../public/post1.png"
-import man1 from "../../public/man1.png"
-import post2 from "../../public/post2.png"
-import man2 from "../../public/man2.png"
-import post3 from "../../public/post3.png"
-import man3 from "../../public/man3.png"
+import post1 from "../../public/post1.png";
+import man1 from "../../public/man1.png";
+import post2 from "../../public/post2.png";
+import man2 from "../../public/man2.png";
+import post3 from "../../public/post3.png";
+import man3 from "../../public/man3.png";
+import { IoEyeOutline } from "react-icons/io5";
+import { IoShareSocial } from "react-icons/io5";
+
+
 const Post = () => {
     return (
         <div>
@@ -31,16 +35,16 @@ const Post = () => {
 
       {/**-----card 1------------ */}
 
-      <Card style={{ width: '38rem' }}>
+      <Card className="w-100 w-md-50" style={{ maxWidth: "600px" }}>
       <Card.Img variant="top" src={post1} />
       <Card.Body>
       <Card.Title>✍️ Article</Card.Title>
 
         <div className='d-flex justify-content-between align-items-center'>
-        <Card.Title style={{width:"500px"}}>Tax Benefits for Investment under National Pension Scheme launched by Government</Card.Title>
+        <Card.Title style={{width:"500px"}}>What if famous brands had regular fonts? Meet RegulaBrands!</Card.Title>
         <p style={{ fontWeight: 'bold' }}>...</p>        </div>
         <Card.Text>
-        Ive worked in UX for the better part of a decade. From now on, I plan to rei…
+        I’ve worked in UX for the better part of a decade. From now on, I plan to rei…
         </Card.Text>
          <div className='d-flex justify-content-between align-items-center'>
          <div className='d-flex justify-content-center align-items-center'>
@@ -55,27 +59,30 @@ const Post = () => {
          </h6>
            </div>
            
-           <div className='d-flex justify-content-center align-items-center'>
-           <h6>100view</h6>
-           <h6 className='ms-2'> SHare</h6>
+           <div className='d-flex justify-content-between align-items-center gap-5'>
+         <div className=' d-flex align-items-center gap-2 '>
+         <IoEyeOutline className='fs-5'/>
+           <h6 className='mt-1'>1.4k views</h6>
+         </div>
+           <IoShareSocial className='fs-5' />
            </div>
          </div>
        </Card.Body>
     </Card>
 
-{/**---------------card 2------------ */}
+{/*---------------card 2------------ */}
 
-<Card style={{ width: '38rem' }}>
+<Card className="w-100 w-md-50" style={{ maxWidth: "600px" }}>
       <Card.Img variant="top" src={post2} />
       <Card.Body>
       <Card.Title>🔬️ Education</Card.Title>
       <div className='d-flex justify-content-between align-items-center'>
-        <Card.Title style={{width:"500px"}}>What if famous brands had regular fonts? Meet RegulaBrands!</Card.Title>
+        <Card.Title style={{width:"500px"}}>Tax Benefits for Investment under National Pension Scheme launched by Government</Card.Title>
         <p style={{ fontWeight: 'bold' }}>...</p>      
         </div>
        
         <Card.Text>
-        Ive worked in UX for the better part of a decade. From now on, I plan to re
+        I’ve worked in UX for the better part of a decade. From now on, I plan to rei…
         </Card.Text>
          <div className='d-flex justify-content-between align-items-center'>
          <div className='d-flex justify-content-center align-items-center'>
@@ -90,17 +97,19 @@ const Post = () => {
     </h6>
            </div>
            
-           <div className='d-flex justify-content-center align-items-center'>
-           <h6>100view</h6>
-           <h6 className='ms-2'> SHare</h6>
+           <div className='d-flex justify-content-between align-items-center gap-5'>
+         <div className=' d-flex align-items-center gap-2 '>
+         <IoEyeOutline className='fs-5'/>
+           <h6 className='mt-1'>1.4k views</h6>
+         </div>
+           <IoShareSocial className='fs-5' />
            </div>
          </div>
        </Card.Body>
     </Card>
 
 {/**---------------card 3------------ */}
-
-<Card style={{ width: '38rem' }}>
+<Card className="w-100 w-md-50" style={{ maxWidth: "600px" }}>
       <Card.Img variant="top" src={post3} />
       <Card.Body>
       <Card.Title>🗓️ Meetup</Card.Title>
@@ -110,9 +119,9 @@ const Post = () => {
         <p style={{ fontWeight: 'bold' }}>...</p>  
          </div>
         
-        <Card.Text>
+        {/* <Card.Text>
         Ive worked in UX for the better part of a decade. From now on, I plan to re
-        </Card.Text>
+        </Card.Text> */}
          <div className='d-flex justify-content-between align-items-center'>
          <div className='d-flex justify-content-center align-items-center'>
            <img
@@ -126,9 +135,12 @@ const Post = () => {
     </h6>
            </div>
            
-           <div className='d-flex justify-content-center align-items-center'>
-           <h6>100view</h6>
-           <h6 className='ms-2'> SHare</h6>
+           <div className='d-flex justify-content-between align-items-center gap-5'>
+         <div className=' d-flex align-items-center gap-2 '>
+         <IoEyeOutline className='fs-5'/>
+           <h6 className='mt-1'>1.4k views</h6>
+         </div>
+           <IoShareSocial className='fs-5' />
            </div>
          </div>
        </Card.Body>
