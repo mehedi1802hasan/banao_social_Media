@@ -10,7 +10,7 @@ const Nav = () => {
   const [modalShow, setModalShow] = useState(false);
 
   return (
-    <Container className='d-flex justify-content-between align-items-center p-3'>
+    <div className='d-flex justify-content-between align-items-center p-2'>
         <div>
         <Image src={logo} alt="" />
         </div>
@@ -40,7 +40,7 @@ const Nav = () => {
             </h6>
         </div>
         <LoginModal show={modalShow} onHide={() => setModalShow(false)} />
-      </Container>
+      </div>
         
     
   );
