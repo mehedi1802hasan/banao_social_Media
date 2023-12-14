@@ -28,7 +28,12 @@ const Post = () => {
   const [showDropdown2, setShowDropdown2] = useState(false);
   const [showDropdown3, setShowDropdown3] = useState(false);
   const [showDropdown4, setShowDropdown4] = useState(false);
+  const [followGroup, setFollowGroup] = useState('Join-Group');
 
+  const handleClickJoin = () => {
+    const newGroup = followGroup === 'Join-Group' ? 'Leave-Group' : 'Join-Group';
+    setFollowGroup(newGroup);
+  };
   const handleClick = (dropdownNumber) => {
     switch (dropdownNumber) {
       case 1:
@@ -66,8 +71,8 @@ const Post = () => {
                 </div>
                 <div className='col-6 col-md-4 d-flex align-items-center'>
                 <Button className='fw-bold d-flex align-items-center justify-content-center'  style={{ backgroundColor:"#EDEEF0" }} variant="btn">Write a Post <RiArrowDropDownFill className='fs-2'/> </Button>
-                <Button className='fw-bold d-flex align-items-center justify-content-center gap-1'  style={{ marginLeft: '20px'}} variant="btn btn-primary"> <MdOutlineGroupAdd
- className='fs-4'/> Join Group </Button>
+                <Button onClick={handleClickJoin} className='fw-bold d-flex align-items-center justify-content-center gap-1'  style={{ marginLeft: '20px'}} variant="btn btn-primary"> <MdOutlineGroupAdd
+ className='fs-4'/> {followGroup} </Button>
 
                 </div>
             </Container>
@@ -363,7 +368,9 @@ defaultValue={'Nodia , India'}
   <p>Your location will help us serve better and extend a  personalised experience.</p>
  </div>
 
-<div className='mt-3  lastDiv'>
+
+ {followGroup === 'Leave-Group' && 
+<div  className='mt-3'>
   <div className='d-flex align-items-center gap-2'>
  <p><BiSolidLike className='fs-5'/></p> 
  <p>REcommended Groups</p>
@@ -397,7 +404,12 @@ height: '27px',backgroundColor:"#EDEEF0",color:"black",borderRadius: '24px'
 height: '27px',backgroundColor:"#EDEEF0",color:"black",borderRadius: '24px'
 }}>Follow</div>
   </div>
+
+  <h6  style={{ color:"#2F6CE5"}}className='text-end mt-5'>See More...</h6>
 </div>
+}
+
+
 
        </div>
       </Container>
