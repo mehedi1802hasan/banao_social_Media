@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Button, Card, Container, Form} from 'react-bootstrap';
+import React, { useState,useEffect } from 'react';
+import { Button, Card, Col, Container, Form, Row} from 'react-bootstrap';
 import post1 from "../../public/post1.png";
 import man1 from "../../public/man1.png";
 import post2 from "../../public/post2.png";
@@ -57,6 +57,33 @@ const Post = () => {
     // Handle the click on dropdown items as needed
     console.log(`Dropdown ${dropdownNumber}, Item clicked: ${item}`);
   };
+
+  const [titleWidth, setTitleWidth] = useState('300px');
+
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+
+      if (screenWidth >= 992) {
+        setTitleWidth('500px'); // Large devices
+      } else if (screenWidth >= 768) {
+        setTitleWidth('500px'); // Medium devices
+      } else {
+        setTitleWidth('300px'); // Small devices
+      }
+    };
+
+    // Initial call to set the initial width
+    handleResize();
+
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
     return (
         <div>
 <div className='mt-4 d-flex justify-content-center'>
@@ -80,8 +107,9 @@ const Post = () => {
         </div>
        <Container className=''><hr  className='w-100 '/></Container> 
         <div>
-      <Container className='d-flex justify-content-between '>
-       <div>
+      <Container className=' '>
+        <Row className=' '>
+       <Col >
       {/**-----card 1------------ */}
 
       <Card className="w-100 w-md-50" style={{ maxWidth: "600px" }}>
@@ -90,8 +118,9 @@ const Post = () => {
       <Card.Title>✍️ Article</Card.Title>
 
         <div className='d-flex justify-content-between align-items-center'>
-        <Card.Title style={{width:"500px"}}>What if famous brands had regular fonts? Meet RegulaBrands!</Card.Title>
-
+        <Card.Title style={{ width: titleWidth }}>
+        What if famous brands had regular fonts? Meet RegulaBrands!
+      </Card.Title>
 
 
        
@@ -154,12 +183,15 @@ height: '27px',backgroundColor:"#EDEEF0"}}> <IoShareSocial className='fs-5 ' /><
 
 {/*---------------card 2------------ */}
 
-<Card className="w-100 w-md-50 my-3" style={{ maxWidth: "600px" }}>
+ <Card className="w-100 w-md-50 my-3" style={{ maxWidth: "600px" }}>
       <Card.Img variant="top" src={post2} />
       <Card.Body>
       <Card.Title>🔬️ Education</Card.Title>
       <div className='d-flex justify-content-between align-items-center'>
-        <Card.Title style={{width:"500px"}}>Tax Benefits for Investment under National Pension Scheme launched by Government</Card.Title>
+        <Card.Title style={{ width: titleWidth }}>
+        Tax Benefits for Investment under National Pension Scheme launched by Government
+      </Card.Title>
+   
         <div style={{ position: 'relative' }}>
               <p onClick={() => handleClick(2)} style={{ fontWeight: 'bold' }}>...</p> 
               {showDropdown2 && (
@@ -221,7 +253,14 @@ height: '27px',backgroundColor:"#EDEEF0"}}> <IoShareSocial className='fs-5 ' /><
       <Card.Title>🗓️ Meetup</Card.Title>
 
       <div className='d-flex justify-content-between align-items-center'>
-        <Card.Title style={{width:"500px"}}>Finance & Investment Elite Social Mixer @Lujiazui</Card.Title>
+
+
+
+
+
+      <Card.Title style={{ width: titleWidth }}>
+        Finance & Investment Elite Social Mixer @Lujiazui
+      </Card.Title>
         <div style={{ position: 'relative' }}>
               <p onClick={() => handleClick(3)} style={{ fontWeight: 'bold' }}>...</p> 
               {showDropdown3 && (
@@ -276,17 +315,21 @@ height: '27px',backgroundColor:"#EDEEF0"}}> <IoShareSocial className='fs-5 ' /><
 height: '27px',backgroundColor:"#EDEEF0"}}> <IoShareSocial className='fs-5 ' /></div>           </div>
          </div>
        </Card.Body>
-    </Card>
-
+    </Card> 
 
 {/**---------------card 4------------ */}
-<Card className="w-100 w-md-50 mt-3 mb-2" style={{ maxWidth: "600px" }}>
-      {/* <Card.Img variant="top" src={post3} /> */}
-      <Card.Body>
+ <Card className="w-100 w-md-50 mt-3 mb-2" style={{ maxWidth: "600px" }}>
+       <Card.Img variant="top" src={post3} /> 
+    <Card.Body>
       <Card.Title>💼️ Job</Card.Title>
 
       <div className='d-flex justify-content-between align-items-center'>
-        <Card.Title style={{width:"500px"}}>Software Developer</Card.Title>
+      
+      <Card.Title style={{ width: titleWidth }}>
+      Software Developer
+      </Card.Title>
+      
+       
         <div style={{ position: 'relative' }}>
               <p onClick={() => handleClick(4)} style={{ fontWeight: 'bold' }}>...</p> 
               {showDropdown4 && (
@@ -342,11 +385,11 @@ height: '27px',backgroundColor:"#EDEEF0"}}> <IoShareSocial className='fs-5 ' /><
 height: '27px',backgroundColor:"#EDEEF0"}}> <IoShareSocial className='fs-5 ' /></div>           </div>
          </div>
        </Card.Body>
-    </Card>
-    </div>
+    </Card> 
+    </Col>
 
-       <div className=''>
-       <div style={{marginTop:"50px"}} className='d-flex align-items-center justify-content-center'>
+       <Col className='ms-0 ms-md-5 ms-lg-5' style={{ marginRight: '20px' }}>
+        <div style={{marginTop:"50px"}} className='d-flex align-items-center justify-content-center'>
    
    <HiLocationMarker className='fs-4 '/>
     <Form.Control
@@ -407,11 +450,12 @@ height: '27px',backgroundColor:"#EDEEF0",color:"black",borderRadius: '24px'
 
   <h6  style={{ color:"#2F6CE5"}}className='text-end mt-5'>See More...</h6>
 </div>
-}
+} 
 
 
 
-       </div>
+       </Col>
+       </Row>
       </Container>
 
         </div>

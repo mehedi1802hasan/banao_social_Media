@@ -29,15 +29,14 @@ const Nav = () => {
 
 
         <div className='d-flex align-items-center mt-3'>
-        <h6 >
-              Create Account{' '}
-              <span>
-                <Link to='#' onClick={() => setModalShow(true)}>
-                  It's free! <RiArrowDropDownFill className='fs-1 text-dark' />
-
-                </Link>
-              </span>
-            </h6>
+        <h6 className='d-flex align-items-center gap-2'>
+      <span className='d-none d-md-flex d-lg-flex '>Create Account{'  '}</span>
+       <span>
+        <Link to='#' onClick={() => setModalShow(true)}>
+           It's free! <RiArrowDropDownFill className='fs-0 fs-md-1 fs-md-1 text-dark' />
+        </Link>
+      </span>
+    </h6>
         </div>
         <LoginModal show={modalShow} onHide={() => setModalShow(false)} />
       </div>

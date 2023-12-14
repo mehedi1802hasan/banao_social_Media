@@ -13,7 +13,7 @@ const Main = () => {
 
 
 <Banner></Banner>  
-{/* <Post></Post>        */}
+<Post></Post>       
         </div>
     );
 };

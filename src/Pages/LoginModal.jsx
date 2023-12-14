@@ -13,7 +13,7 @@ function LoginModal(props) {
     >
       <Modal.Header closeButton style={{borderBottom:"none"}}>
         <Modal.Title id="contained-modal-title-vcenter">
-          <h6 className='text-center p-3' style={{color:"#008A45"}}>Let's learn, share & inspire each other with our passion for computer engineering. Sign up now 🤘🏼</h6>
+          <h6 className='text-center p-3' style={{backgroundColor:"#EFFFF4",color:"#008A45"}}>Let's learn, share & inspire each other with our passion for computer engineering. Sign up now 🤘🏼</h6>
           
         </Modal.Title>
       </Modal.Header>
@@ -52,7 +52,10 @@ Sign in with Google</p>
              {/** 2nd part link and image */}
              <Col className='d-none d-md-flex d-lg-flex'>
                <div>
-               <h6>Don’t have an account yet? Create new for free!</h6>
+               <h6>Don’t have an account yet?           <span style={{ color: 'blue', textDecoration: 'underline' }}>
+            Create new for free!
+          </span>
+ </h6>
                <img className='mt-5' src={login} alt="" />
                </div>
 
