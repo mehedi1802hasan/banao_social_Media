@@ -1,19 +1,33 @@
 import React, { useState } from 'react';
-import { Button, Card, Container} from 'react-bootstrap';
+import { Button, Card, Container, Form} from 'react-bootstrap';
 import post1 from "../../public/post1.png";
 import man1 from "../../public/man1.png";
 import post2 from "../../public/post2.png";
 import man2 from "../../public/man2.png";
 import post3 from "../../public/post3.png";
 import man3 from "../../public/man3.png";
+import man4 from "../../public/man4.png";
+import { RiArrowDropDownFill } from "react-icons/ri";
+import { BiSolidLike } from "react-icons/bi";
 import { IoEyeOutline } from "react-icons/io5";
 import { IoShareSocial } from "react-icons/io5";
+import { FaCalendarWeek } from "react-icons/fa";
+import { HiLocationMarker } from "react-icons/hi";
+import { MdOutlineWebAsset } from "react-icons/md";
+import { MdOutlineGroupAdd } from "react-icons/md";
+import { FaPen } from "react-icons/fa";
+import { MdErrorOutline } from "react-icons/md";
+import group1 from "../../public/group1.png";
+import group2 from "../../public/group2.png";
+import group3 from "../../public/group3.png";
+import group4 from "../../public/group4.png";
 
 
 const Post = () => {
   const [showDropdown1, setShowDropdown1] = useState(false);
   const [showDropdown2, setShowDropdown2] = useState(false);
   const [showDropdown3, setShowDropdown3] = useState(false);
+  const [showDropdown4, setShowDropdown4] = useState(false);
 
   const handleClick = (dropdownNumber) => {
     switch (dropdownNumber) {
@@ -25,6 +39,9 @@ const Post = () => {
         break;
       case 3:
         setShowDropdown3(!showDropdown3);
+        break;
+        case 4:
+        setShowDropdown4(!showDropdown4);
         break;
       default:
         break;
@@ -38,25 +55,28 @@ const Post = () => {
     return (
         <div>
 <div className='mt-4 d-flex justify-content-center'>
-            <Container  className='row d-flex justify-content-between '>
+            <Container  className='row d-flex justify-content-between align-items-center'>
                 <div className='col-12 col-md-6 d-flex '>
-                    <h6  style={{ marginLeft: '0',fontWeight: 'bold' }}>All Post(35)</h6>
-                    <h6 style={{ marginLeft: '20px' }}>Article</h6>
-                    <h6 style={{ marginLeft: '20px' }}>Event</h6>
-                    <h6 style={{ marginLeft: '20px' }}>Education</h6>
-                    <h6 style={{ marginLeft: '20px' }}>Jobs</h6>
+                    <h6  style={{ marginLeft: '0',fontWeight: 'bold' }}>All Post(32)</h6>
+                    <h6 style={{ marginLeft: '20px', color: '#8A8A8A' }}>Article</h6>
+
+                    <h6 style={{ marginLeft: '20px', color: '#8A8A8A' }}>Event</h6>
+                    <h6 style={{ marginLeft: '20px', color: '#8A8A8A' }}>Education</h6>
+                    <h6 style={{ marginLeft: '20px', color: '#8A8A8A' }}>Jobs</h6>
                 </div>
                 <div className='col-6 col-md-4 d-flex align-items-center'>
-                <Button style={{ marginLeft: '20px' }} variant="warning">Warning</Button>
-                <Button style={{ marginLeft: '20px' }} variant="warning">Warning</Button>
+                <Button className='fw-bold d-flex align-items-center justify-content-center'  style={{ backgroundColor:"#EDEEF0" }} variant="btn">Write a Post <RiArrowDropDownFill className='fs-2'/> </Button>
+                <Button className='fw-bold d-flex align-items-center justify-content-center gap-1'  style={{ marginLeft: '20px'}} variant="btn btn-primary"> <MdOutlineGroupAdd
+ className='fs-4'/> Join Group </Button>
 
                 </div>
             </Container>
+           
         </div>
-
+       <Container className=''><hr  className='w-100 '/></Container> 
         <div>
-      <Container>
-
+      <Container className='d-flex justify-content-between '>
+       <div>
       {/**-----card 1------------ */}
 
       <Card className="w-100 w-md-50" style={{ maxWidth: "600px" }}>
@@ -173,7 +193,7 @@ height: '27px',backgroundColor:"#EDEEF0"}}> <IoShareSocial className='fs-5 ' /><
       style={{ height: '50px',width:'50px' }}
     />
      <h6  className='ms-2'>
-     Sarthak Kamra
+     Sarah West
     </h6>
            </div>
            
@@ -223,9 +243,12 @@ height: '27px',backgroundColor:"#EDEEF0"}}> <IoShareSocial className='fs-5 ' /><
             </div>
            </div>
         
-        {/* <Card.Text>
-        Ive worked in UX for the better part of a decade. From now on, I plan to re
-        </Card.Text> */}
+        <div className='d-flex mt-1 mb-3 align-items-center gap-4'>
+       <div className='d-flex align-items-center gap-1' ><FaCalendarWeek  /> <span>Fri, 12 Oct, 2018</span></div> 
+<div className='d-flex align-items-center gap-1'><HiLocationMarker /> <span>Ahmedabad, India</span>
+</div>
+        </div>
+        <Button style={{color:'#E56135'}} className='w-100 mb-4' variant="outline-secondary">Visit Website</Button>{' '}
          <div className='d-flex justify-content-between align-items-center'>
          <div className='d-flex justify-content-center align-items-center'>
            <img
@@ -235,8 +258,8 @@ height: '27px',backgroundColor:"#EDEEF0"}}> <IoShareSocial className='fs-5 ' /><
       style={{ height: '50px',width:'50px' }}
     />
      <h6  className='ms-2'>
-     Sarthak Kamra
-    </h6>
+     Ronal Jones
+      </h6>
            </div>
            
            <div className='d-flex justify-content-between align-items-center gap-5'>
@@ -250,6 +273,133 @@ height: '27px',backgroundColor:"#EDEEF0"}}> <IoShareSocial className='fs-5 ' /><
        </Card.Body>
     </Card>
 
+
+{/**---------------card 4------------ */}
+<Card className="w-100 w-md-50 mt-3 mb-2" style={{ maxWidth: "600px" }}>
+      {/* <Card.Img variant="top" src={post3} /> */}
+      <Card.Body>
+      <Card.Title>💼️ Job</Card.Title>
+
+      <div className='d-flex justify-content-between align-items-center'>
+        <Card.Title style={{width:"500px"}}>Software Developer</Card.Title>
+        <div style={{ position: 'relative' }}>
+              <p onClick={() => handleClick(4)} style={{ fontWeight: 'bold' }}>...</p> 
+              {showDropdown4 && (
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '100%',
+                    right: 0,
+                    margin: '8px 0 0', // Adjust this value as needed
+                    borderRadius: '4px',
+                    background: '#FFF',
+                    boxShadow: '0px 0px 2px 0px rgba(0, 0, 0, 0.08), 0px 2px 8px 0px rgba(0, 0, 0, 0.16)',
+                    width: '160px',
+                    height: '100px',
+                    flexShrink: 0,
+                  }}
+                  className="dropdown-content border border-dark p-2"
+                >
+                  <div onClick={() => handleItemClick(1, 3)}>Edit</div>
+                  <div className='my-1' onClick={() => handleItemClick(2, 3)}>Report</div>
+                  <div onClick={() => handleItemClick(3, 3)}>Option 3</div>
+                </div>
+              )}
+            </div>
+           </div>
+        
+        <div className='d-flex mt-1 mb-3 align-items-center gap-4'>
+       <div className='d-flex align-items-center gap-1' ><MdOutlineWebAsset />
+ <span>Innovaccer Analytics Private Ltd.</span></div> 
+<div className='d-flex align-items-center gap-1'><HiLocationMarker /> <span>Noida, India</span>
+</div>
+        </div>
+        <Button style={{color:'#02B875'}} className='w-100 mb-4' variant="outline-secondary">Apply on Timesjobs</Button>{' '}
+         <div className='d-flex justify-content-between align-items-center'>
+         <div className='d-flex justify-content-center align-items-center'>
+           <img
+      className="rounded-circle "
+      src={man4}
+      alt=""
+      style={{ height: '50px',width:'50px' }}
+    />
+     <h6  className='ms-2'>
+     Joseph Gray
+      </h6>
+           </div>
+           
+           <div className='d-flex justify-content-between align-items-center gap-5'>
+         <div className=' d-flex align-items-center gap-2 '>
+         <IoEyeOutline className='fs-5'/>
+           <h6 className='mt-1'>1.4k views</h6>
+         </div>
+         <div className='rounded-2 d-flex align-items-center justify-content-center' style={{width: '29px',
+height: '27px',backgroundColor:"#EDEEF0"}}> <IoShareSocial className='fs-5 ' /></div>           </div>
+         </div>
+       </Card.Body>
+    </Card>
+    </div>
+
+       <div className=''>
+       <div style={{marginTop:"50px"}} className='d-flex align-items-center justify-content-center'>
+   
+   <HiLocationMarker className='fs-4 '/>
+    <Form.Control
+    className=' ms-1'
+style={{ border: 'none', boxShadow: 'none',width:"155px", height: '15px', padding: '0', margin: '0' }}
+type="text"
+placeholder="Enter your Location"
+defaultValue={'Nodia , India'}
+/>          <p><FaPen className=' mt-3'
+ />
+</p>
+
+
+ </div>
+ <div  style={{width:"250px"}} className='d-flex justify-content-center mx-auto'><hr  className='w-100 '/></div> 
+
+ <div className='d-flex justify-content-center text-center ' style={{width:"300px"}}> 
+ <MdErrorOutline className='fs-3' />
+  <p>Your location will help us serve better and extend a  personalised experience.</p>
+ </div>
+
+<div className='mt-3  lastDiv'>
+  <div className='d-flex align-items-center gap-2'>
+ <p><BiSolidLike className='fs-5'/></p> 
+ <p>REcommended Groups</p>
+  </div>
+
+  <div className='d-flex align-items-center gap-2 justify-content-between mt-2'>
+   <div className='d-flex align-items-center gap-2'><p> <img src={group1} alt="" /></p>
+    <p>Leisure</p></div>
+    <div className='text-center'  style={{width: '90px',
+height: '27px',backgroundColor:"black",color:"white",borderRadius: '24px'
+}}>Follow</div>
+  </div>
+  <div className='d-flex align-items-center gap-2 justify-content-between'>
+   <div className='d-flex align-items-center gap-2'><p> <img src={group2} alt="" /></p>
+    <p>Activism</p></div>
+    <div className='text-center'  style={{width: '90px',
+height: '27px',backgroundColor:"#EDEEF0",color:"black",borderRadius: '24px'
+}}>Follow</div>
+  </div>
+  <div className='d-flex align-items-center gap-2 justify-content-between'>
+   <div className='d-flex align-items-center gap-2'><p> <img src={group3} alt="" /></p>
+    <p>MBA</p></div>
+    <div className='text-center'  style={{width: '90px',
+height: '27px',backgroundColor:"#EDEEF0",color:"black",borderRadius: '24px'
+}}>Follow</div>
+  </div>
+  <div className='d-flex align-items-center gap-2 justify-content-between'>
+   <div className='d-flex align-items-center gap-2'><p> <img src={group4} alt="" /></p>
+    <p>Philosophy</p></div>
+    <div className='text-center'  style={{width: '90px',
+height: '27px',backgroundColor:"#EDEEF0",color:"black",borderRadius: '24px'
+}}>Follow</div>
+  </div>
+</div>
+
+       </div>
       </Container>
 
         </div>

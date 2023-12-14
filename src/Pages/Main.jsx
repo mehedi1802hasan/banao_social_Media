@@ -8,7 +8,6 @@ import Raf from './Raf';
 const Main = () => {
     return (
         <div>
-            <Raf></Raf>
             <Nav></Nav>
              <LoginModal></LoginModal>
 
